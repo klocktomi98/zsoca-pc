@@ -19,20 +19,15 @@ html, body {
 
 body {
     min-height: 100vh;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
     color: #fff;
 
     background:
         linear-gradient(
             90deg,
-            rgba(5, 10, 18, .94),
-            rgba(5, 10, 18, .72),
-            rgba(5, 10, 18, .94)
+            rgba(5, 10, 18, .95),
+            rgba(5, 10, 18, .70),
+            rgba(5, 10, 18, .95)
         ),
         url("cs2.jpg");
 
@@ -44,12 +39,13 @@ body {
     justify-content: center;
     align-items: center;
 
+    padding: 30px 0;
     overflow-x: hidden;
 }
 
-/* -------------------------
-   ANIMÁLT FÉNYEK
-------------------------- */
+/* =========================
+   HÁTTÉR FÉNYEK
+========================= */
 
 body::before {
     content: "";
@@ -115,27 +111,26 @@ body::after {
     }
 }
 
-/* -------------------------
+/* =========================
    FŐ HUD
-------------------------- */
+========================= */
 
 .hud {
     position: relative;
 
     width: 94%;
-    max-width: 1100px;
+    max-width: 1150px;
 
     z-index: 5;
 
     background:
         linear-gradient(
             145deg,
-            rgba(8,15,25,.92),
-            rgba(12,18,28,.78)
+            rgba(8,15,25,.94),
+            rgba(12,18,28,.82)
         );
 
-    border:
-        1px solid rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.12);
 
     box-shadow:
         0 30px 100px rgba(0,0,0,.75),
@@ -160,9 +155,9 @@ body::after {
     }
 }
 
-/* -------------------------
-   FELSŐ SÁV
-------------------------- */
+/* =========================
+   TOPBAR
+========================= */
 
 .topbar {
     height: 62px;
@@ -170,7 +165,6 @@ body::after {
     display: flex;
 
     justify-content: space-between;
-
     align-items: center;
 
     padding: 0 28px;
@@ -230,9 +224,9 @@ body::after {
     }
 }
 
-/* -------------------------
-   CS2 HEADER
-------------------------- */
+/* =========================
+   HEADER
+========================= */
 
 .header {
     padding: 50px 30px 20px;
@@ -279,7 +273,6 @@ body::after {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 12px;
@@ -295,9 +288,9 @@ body::after {
     color: #ef4444;
 }
 
-/* -------------------------
-   FŐ SZÁMLÁLÓ
-------------------------- */
+/* =========================
+   TIMER
+========================= */
 
 .timer-panel {
     width: 92%;
@@ -390,9 +383,9 @@ body::after {
     font-weight: bold;
 }
 
-/* -------------------------
+/* =========================
    STATOK
-------------------------- */
+========================= */
 
 .stats {
     width: 92%;
@@ -466,9 +459,9 @@ body::after {
     color: #38bdf8;
 }
 
-/* -------------------------
-   STATUS
-------------------------- */
+/* =========================
+   ALIVE
+========================= */
 
 .alive {
     width: 92%;
@@ -480,7 +473,6 @@ body::after {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 10px;
@@ -514,9 +506,344 @@ body::after {
     animation: blink 1.5s infinite;
 }
 
-/* -------------------------
-   ALSÓ INFORMÁCIÓ
-------------------------- */
+/* =====================================================
+   FACEIT PANEL
+===================================================== */
+
+.faceit-panel {
+    width: 92%;
+
+    margin: 35px auto 25px;
+
+    padding: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(19,19,19,.96),
+            rgba(10,10,10,.90)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.35);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* narancssárga CS/FACEIT felső csík */
+
+.faceit-panel::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f59e0b,
+            #ff6b00,
+            transparent
+        );
+}
+
+/* FACEIT fejléc */
+
+.faceit-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 24px 25px 20px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+}
+
+.faceit-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    font-size: 16px;
+}
+
+.faceit-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9800,
+            #e65100
+        );
+
+    font-size: 17px;
+
+    box-shadow:
+        0 0 18px rgba(245,158,11,.18);
+}
+
+.faceit-season {
+    color: #64748b;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+/* játékos */
+
+.faceit-player {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 25px;
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+.player-name {
+    font-size: 25px;
+
+    font-weight: 900;
+}
+
+.player-country {
+    margin-top: 5px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.faceit-rank {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.level {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 23px;
+
+    font-weight: 900;
+
+    border: 4px solid #f59e0b;
+
+    color: white;
+
+    background: #151515;
+
+    box-shadow:
+        0 0 20px rgba(245,158,11,.18);
+}
+
+.elo {
+    text-align: left;
+}
+
+.elo-number {
+    font-size: 27px;
+
+    font-weight: 900;
+
+    color: #f8fafc;
+}
+
+.elo-label {
+    color: #64748b;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+/* stat grid */
+
+.faceit-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1px;
+
+    background:
+        rgba(255,255,255,.07);
+}
+
+.faceit-stat {
+    padding: 20px;
+
+    background:
+        #111;
+
+    min-height: 90px;
+}
+
+.faceit-stat-label {
+    color: #64748b;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+}
+
+.faceit-stat-value {
+    margin-top: 8px;
+
+    font-family: monospace;
+
+    font-size: 23px;
+
+    font-weight: 900;
+
+    color: #f1f5f9;
+}
+
+.faceit-stat-value.orange {
+    color: #f59e0b;
+}
+
+.faceit-stat-value.green {
+    color: #22c55e;
+}
+
+.faceit-stat-value.red {
+    color: #ef4444;
+}
+
+/* recent */
+
+.recent {
+    padding: 20px 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    background:
+        rgba(0,0,0,.25);
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+}
+
+.recent-title {
+    color: #64748b;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+}
+
+.recent-result {
+    font-family: monospace;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+.win {
+    color: #22c55e;
+}
+
+.loss {
+    color: #ef4444;
+}
+
+/* gomb */
+
+.faceit-button {
+    display: block;
+
+    margin: 0 25px 24px;
+
+    padding: 14px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f59e0b,
+            #ea580c
+        );
+
+    transition: .25s;
+
+    box-shadow:
+        0 8px 25px rgba(245,158,11,.12);
+}
+
+.faceit-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(245,158,11,.25);
+
+    filter: brightness(1.08);
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 .bottom {
     padding: 20px 30px 30px;
@@ -534,9 +861,9 @@ body::after {
     color: #94a3b8;
 }
 
-/* -------------------------
+/* =========================
    MOBIL
-------------------------- */
+========================= */
 
 @media (max-width: 700px) {
 
@@ -567,10 +894,7 @@ body::after {
             repeat(2, 1fr);
     }
 
-    .time-box:nth-child(2)::after {
-        display: none;
-    }
-
+    .time-box:nth-child(2)::after,
     .time-box:nth-child(4)::after {
         display: none;
     }
@@ -582,19 +906,57 @@ body::after {
 
     .timer-panel,
     .stats,
-    .alive {
+    .alive,
+    .faceit-panel {
         width: 94%;
+    }
+
+    .faceit-stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .faceit-player {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .player-name {
+        font-size: 20px;
+    }
+
+    .level {
+        width: 45px;
+        height: 45px;
+
+        font-size: 19px;
+    }
+
+    .elo-number {
+        font-size: 22px;
+    }
+
+    .recent {
+        gap: 15px;
+
+        flex-direction: column;
     }
 }
 
 </style>
 </head>
 
+
 <body>
+
 
 <div class="hud">
 
-    <!-- FELSŐ SÁV -->
+
+    <!-- =========================
+         FELSŐ SÁV
+    ========================== -->
 
     <div class="topbar">
 
@@ -613,7 +975,9 @@ body::after {
     </div>
 
 
-    <!-- FEJLÉC -->
+    <!-- =========================
+         BOGNÁR ZSOLT
+    ========================== -->
 
     <div class="header">
 
@@ -638,7 +1002,9 @@ body::after {
     </div>
 
 
-    <!-- IDŐ -->
+    <!-- =========================
+         IDŐSZÁMLÁLÓ
+    ========================== -->
 
     <div class="timer-panel">
 
@@ -647,6 +1013,7 @@ body::after {
         </div>
 
         <div class="timer">
+
 
             <div class="time-box">
 
@@ -711,14 +1078,18 @@ body::after {
 
             </div>
 
+
         </div>
 
     </div>
 
 
-    <!-- STATOK -->
+    <!-- =========================
+         ÁLTALÁNOS STATOK
+    ========================== -->
 
     <div class="stats">
+
 
         <div class="stat">
 
@@ -773,10 +1144,13 @@ body::after {
 
         </div>
 
+
     </div>
 
 
-    <!-- ALIVE -->
+    <!-- =========================
+         ALIVE
+    ========================== -->
 
     <div class="alive">
 
@@ -787,7 +1161,247 @@ body::after {
     </div>
 
 
-    <!-- ALSÓ RÉSZ -->
+    <!-- =================================================
+         FACEIT
+    ================================================== -->
+
+    <div class="faceit-panel">
+
+
+        <!-- FACEIT fejléc -->
+
+        <div class="faceit-header">
+
+            <div class="faceit-title">
+
+                <div class="faceit-icon">
+                    🎮
+                </div>
+
+                FACEIT // PLAYER
+
+            </div>
+
+            <div class="faceit-season">
+                SEASON 9
+            </div>
+
+        </div>
+
+
+        <!-- játékos + level + elo -->
+
+        <div class="faceit-player">
+
+
+            <div>
+
+                <div class="player-name">
+                    Zsoli59 ✓
+                </div>
+
+                <div class="player-country">
+                    🇭🇺 HUNGARY
+                </div>
+
+            </div>
+
+
+            <div class="faceit-rank">
+
+
+                <div class="level">
+                    7
+                </div>
+
+
+                <div class="elo">
+
+                    <div class="elo-number">
+                        1490
+                    </div>
+
+                    <div class="elo-label">
+                        FACEIT ELO
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- STATISZTIKÁK -->
+
+        <div class="faceit-stats">
+
+
+            <div class="faceit-stat">
+
+                <div class="faceit-stat-label">
+                    K/D
+                </div>
+
+                <div class="faceit-stat-value orange">
+                    0.92
+                </div>
+
+            </div>
+
+
+            <div class="faceit-stat">
+
+                <div class="faceit-stat-label">
+                    K/D/A
+                </div>
+
+                <div class="faceit-stat-value">
+                    15 / 17 / 4
+                </div>
+
+            </div>
+
+
+            <div class="faceit-stat">
+
+                <div class="faceit-stat-label">
+                    K/R
+                </div>
+
+                <div class="faceit-stat-value">
+                    0.69
+                </div>
+
+            </div>
+
+
+            <div class="faceit-stat">
+
+                <div class="faceit-stat-label">
+                    HEADSHOT %
+                </div>
+
+                <div class="faceit-stat-value">
+                    26%
+                </div>
+
+            </div>
+
+
+            <div class="faceit-stat">
+
+                <div class="faceit-stat-label">
+                    ADR
+                </div>
+
+                <div class="faceit-stat-value">
+                    75.5
+                </div>
+
+            </div>
+
+
+            <div class="faceit-stat">
+
+                <div class="faceit-stat-label">
+                    WIN RATE
+                </div>
+
+                <div class="faceit-stat-value red">
+                    29%
+                </div>
+
+            </div>
+
+
+            <div class="faceit-stat">
+
+                <div class="faceit-stat-label">
+                    SEASON MATCHES
+                </div>
+
+                <div class="faceit-stat-value">
+                    24
+                </div>
+
+            </div>
+
+
+            <div class="faceit-stat">
+
+                <div class="faceit-stat-label">
+                    ELO CHANGE
+                </div>
+
+                <div class="faceit-stat-value red">
+                    -241
+                </div>
+
+            </div>
+
+
+            <div class="faceit-stat">
+
+                <div class="faceit-stat-label">
+                    CONSISTENCY
+                </div>
+
+                <div class="faceit-stat-value">
+                    55%
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- LEGUTÓBBI MECCSEK -->
+
+        <div class="recent">
+
+            <div class="recent-title">
+                RECENT FORM // LAST 30 MATCHES
+            </div>
+
+            <div class="recent-result">
+
+                <span class="win">
+                    7 W
+                </span>
+
+                &nbsp; /
+
+                <span class="loss">
+                    17 L
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- FACEIT PROFIL -->
+
+        <a
+            class="faceit-button"
+            href="https://www.faceit.com/en/players/Zsoli59"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            OPEN FACEIT PROFILE ↗
+        </a>
+
+
+    </div>
+
+
+    <!-- =========================
+         ALSÓ INFORMÁCIÓ
+    ========================== -->
 
     <div class="bottom">
 
@@ -801,7 +1415,12 @@ body::after {
 
         PC nélkül • A számláló folyamatosan fut
 
+        <br>
+
+        FACEIT STATISTICS • SEASON 9
+
     </div>
+
 
 </div>
 
@@ -809,21 +1428,23 @@ body::after {
 <script>
 
 /*
-==========================================
-BOGNÁR ZSOLT CS2 CHALLENGE
-==========================================
+====================================================
+BOGNÁR ZSOLT — PC NÉLKÜLI CHALLENGE
+====================================================
 
 Kezdés:
 2026. augusztus 10. 16:00
 
-==========================================
+====================================================
 */
+
 
 const KEZDÉS_DÁTUMA =
     new Date("2026-08-10T16:00:00");
 
 
 function frissit() {
+
 
     const most =
         new Date();
@@ -833,6 +1454,11 @@ function frissit() {
         most - KEZDÉS_DÁTUMA;
 
 
+    /*
+    Ha a kezdési idő még nem jött el,
+    ne jelenjen meg negatív idő.
+    */
+
     if (kulonbseg < 0) {
 
         kulonbseg = 0;
@@ -840,13 +1466,19 @@ function frissit() {
     }
 
 
+    /*
+    Összes eltelt másodperc
+    */
+
     const osszesMasodperc =
         Math.floor(
             kulonbseg / 1000
         );
 
 
-    /* NAP */
+    /*
+    NAP
+    */
 
     const napok =
         Math.floor(
@@ -854,7 +1486,9 @@ function frissit() {
         );
 
 
-    /* ÓRA */
+    /*
+    ÓRA
+    */
 
     const orak =
         Math.floor(
@@ -863,7 +1497,9 @@ function frissit() {
         );
 
 
-    /* PERC */
+    /*
+    PERC
+    */
 
     const percek =
         Math.floor(
@@ -872,13 +1508,17 @@ function frissit() {
         );
 
 
-    /* MÁSODPERC */
+    /*
+    MÁSODPERC
+    */
 
     const masodpercek =
         osszesMasodperc % 60;
 
 
-    /* KIÍRÁS */
+    /*
+    HTML FRISSÍTÉSE
+    */
 
     document
         .getElementById("days")
@@ -907,7 +1547,9 @@ function frissit() {
         .padStart(2, "0");
 
 
-    /* STREAK */
+    /*
+    STREAK AUTOMATIKUSAN A NAPOK SZÁMA
+    */
 
     document
         .getElementById("streak")
@@ -917,12 +1559,16 @@ function frissit() {
 }
 
 
-/* Indítás */
+/*
+Első frissítés azonnal
+*/
 
 frissit();
 
 
-/* Frissítés másodpercenként */
+/*
+Frissítés minden másodpercben
+*/
 
 setInterval(
     frissit,
@@ -930,6 +1576,7 @@ setInterval(
 );
 
 </script>
+
 
 </body>
 </html>
